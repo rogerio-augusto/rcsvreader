@@ -20,7 +20,7 @@ class TestCSVReader < Test::Unit::TestCase
   
   def test_fetch_all_rows_and_all_columns_sorted
     reader = CSV::CSVReader.new("#{@data_dir}/foo.csv", ["name","email"])
-    expected_lines = 8
+    expected_lines = 4
     lines = 0
     reader.foreach do |line|
       lines += 1
@@ -30,7 +30,7 @@ class TestCSVReader < Test::Unit::TestCase
   
   def test_fetch_all_rows_and_all_columns_unsorted
     reader = CSV::CSVReader.new("#{@data_dir}/foo.csv", ["email","name"])
-    expected_lines = 8
+    expected_lines = 4
     lines = 0
     reader.foreach do |line|
       lines += 1
@@ -40,7 +40,7 @@ class TestCSVReader < Test::Unit::TestCase
   
   def test_fetch_all_rows_and_only_expected_columns
     reader = CSV::CSVReader.new("#{@data_dir}/foo.csv", ["email"])
-    expected_lines = 8
+    expected_lines = 4
     lines = 0
     reader.foreach do |line|
       lines += 1
